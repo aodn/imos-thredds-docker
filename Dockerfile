@@ -19,6 +19,7 @@ ENV TDS_CONTENT_ROOT_PATH /usr/local/tomcat/content
 ENV THREDDS_XMX_SIZE 4G
 ENV THREDDS_XMS_SIZE 4G
 ENV THREDDS_WAR_URL https://downloads.unidata.ucar.edu/tds/5.5/thredds-5.5.war
+ENV THREDDS_ISO_SERVICES_URL https://downloads.unidata.ucar.edu/tds/5.5/tds-plugin-2.4.6-jar-with-dependencies.jar
 
 COPY files/threddsConfig.xml ${CATALINA_HOME}/content/thredds/threddsConfig.xml
 COPY files/tomcat-users.xml ${CATALINA_HOME}/conf/tomcat-users.xml
@@ -57,7 +58,9 @@ RUN apt-get update && \
     rm -f thredds.war && \
     mkdir -p ${CATALINA_HOME}/content/thredds && \
     chmod 755 ${CATALINA_HOME}/bin/*.sh && \
-    mkdir -p ${CATALINA_HOME}/javaUtilPrefs/.systemPrefs
+    mkdir -p ${CATALINA_HOME}/javaUtilPrefs/.systemPrefs && \
+    # thredds ISO
+    curl -o ${CATALINA_HOME}/webapps/thredds/WEB-INF/lib/tds-plugin.jar ${THREDDS_ISO_SERVICES_URL} 
 
 EXPOSE 8080 8443
 
