@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wmsConfig SYSTEM "https://schemas.unidata.ucar.edu/thredds/dtd/ncwms/wmsConfig_2_0.dtd">
+<!--
+Detailed configuration of the WMS service.  This config file can be used to
+set default styling parameters for each dataset/variable, and to enable or disable
+the GetFeatureInfo operation.
+-->
+<wmsConfig>
+    <global>
+        <!-- These settings apply to all datasets unless overridden below -->
+        <defaults>
+            <!-- The global defaults. All elements are mandatory -->
+            <allowFeatureInfo>true</allowFeatureInfo>
+            <defaultColorScaleRange>-50 50</defaultColorScaleRange>
+            <defaultAboveMaxColor>#000000</defaultAboveMaxColor>
+            <defaultBelowMinColor>#000000</defaultBelowMinColor>
+            <defaultNoDataColor>transparent</defaultNoDataColor>
+            <defaultOpacity>100</defaultOpacity>
+            <defaultPaletteName>psu-viridis</defaultPaletteName>
+            <defaultNumColorBands>50</defaultNumColorBands>
+            <logScaling>false</logScaling>
+            <!--Deprecated:
+            intervalTime (does not work, to be removed in v6) -->
+            <intervalTime>false</intervalTime>
+        </defaults>
+
+        <standardNames>
+            <standardName name="analysed_sst" units="K">
+                <defaultColorScaleRange>268 310</defaultColorScaleRange>
+            </standardName>
+            <standardName name="sea_surface_temperature" units="K">
+                <defaultColorScaleRange>268 310</defaultColorScaleRange>
+            </standardName>
+            <standardName name="sea_water_velocity" units="m s-1">
+                <defaultColorScaleRange>0.0 1.0</defaultColorScaleRange>
+            </standardName>
+            <standardName name="surface_geostrophic_sea_water_velocity" units="m s-1">
+                <defaultColorScaleRange>0.0 1.5</defaultColorScaleRange>
+            </standardName>
+            <standardName name="sea_surface_wave_significant_height" units="m">
+                <defaultColorScaleRange>0.0 10.0</defaultColorScaleRange>
+                <defaultNumColorBands>10</defaultNumColorBands>
+            </standardName>
+            <standardName name="sea_surface_wave_to_direction" units="degree">
+                <defaultColorScaleRange>0.0 360.0</defaultColorScaleRange>
+                <defaultPaletteName>occam_pastel-30</defaultPaletteName>
+                <defaultNumColorBands>24</defaultNumColorBands>
+            </standardName>
+            <standardName name="sea_surface_wind_wave_to_direction" units="degree">
+                <defaultColorScaleRange>0.0 360.0</defaultColorScaleRange>
+                <defaultPaletteName>occam_pastel-30</defaultPaletteName>
+                <defaultNumColorBands>24</defaultNumColorBands>
+            </standardName>
+            <standardName name="wind_to_direction" units="degree">
+                <defaultColorScaleRange>0.0 360.0</defaultColorScaleRange>
+                <defaultPaletteName>occam_pastel-30</defaultPaletteName>
+                <defaultNumColorBands>24</defaultNumColorBands>
+            </standardName>
+        </standardNames>
+    </global>
+
+    <overrides>
+        <datasetPath pathSpec="CSIRO/Climatology/CARS/2009/AODN-product/*.nc">
+            <variables>
+                <variable id="TEMP">
+                    <defaultColorScaleRange>-1.9 38</defaultColorScaleRange>
+                </variable>
+
+                <variable id="TEMP_anomaly">
+                    <defaultColorScaleRange>-1.8 1.8</defaultColorScaleRange>
+                    <defaultPaletteName>redblue</defaultPaletteName>
+                </variable>
+
+                <variable id="PSAL">
+                    <defaultColorScaleRange>30 38</defaultColorScaleRange>
+                </variable>
+
+                <variable id="PSAL_anomaly">
+                    <defaultColorScaleRange>-0.7 0.7</defaultColorScaleRange>
+                    <defaultPaletteName>redblue</defaultPaletteName>
+                </variable>
+
+                <variable id="DOX2">
+                    <defaultColorScaleRange>150 350</defaultColorScaleRange>
+                </variable>
+
+                <variable id="DOX2_anomaly">
+                    <defaultColorScaleRange>-25 25</defaultColorScaleRange>
+                    <defaultPaletteName>redblue</defaultPaletteName>
+                </variable>
+
+                <variable id="NTR2">
+                    <defaultColorScaleRange>0 35</defaultColorScaleRange>
+                </variable>
+
+                <variable id="NTR2_anomaly">
+                    <defaultColorScaleRange>-5 5</defaultColorScaleRange>
+                    <defaultPaletteName>redblue</defaultPaletteName>
+                </variable>
+
+                <variable id="PHOS">
+                    <defaultColorScaleRange>0 2.5</defaultColorScaleRange>
+                </variable>
+
+                <variable id="PHOS_anomaly">
+                    <defaultColorScaleRange>-0.7 0.7</defaultColorScaleRange>
+                    <defaultPaletteName>redblue</defaultPaletteName>
+                </variable>
+
+                <variable id="SLC2">
+                    <defaultColorScaleRange>0 100</defaultColorScaleRange>
+                </variable>
+
+                <variable id="SLC2_anomaly">
+                    <defaultColorScaleRange>-18 18</defaultColorScaleRange>
+                    <defaultPaletteName>redblue</defaultPaletteName>
+                </variable>
+
+            </variables>
+        </datasetPath>
+
+        <datasetPath pathSpec="Deakin_University/bathymetry/Victorian-coast_Bathy_500m.nc">
+            <variables>
+                <variable id="HEIGHT">
+                    <defaultColorScaleRange>-78 240</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath pathSpec="CSIRO/Climatology/SSTAARS/2017/AODN-product/*.nc">
+            <variables>
+                <variable id="TEMP">
+                    <defaultColorScaleRange>-1.6 32.8</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <!-- Overrides for ACORN -->
+        <datasetPath
+            pathSpec="IMOS/ACORN/gridded_1h-avg-current-map_non-QC/COF/????/??/??/*.nc">
+            <variables>
+                <variable id="sea_water_velocity">
+                    <defaultColorScaleRange>0.0 3.0</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="IMOS/ACORN/gridded_1h-avg-current-map_QC/COF/????/??/??/*.nc">
+            <variables>
+                <variable id="sea_water_velocity">
+                    <defaultColorScaleRange>0.0 3.0</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="IMOS/ACORN/gridded_1h-avg-current-map_non-QC/NEWC/????/??/??/*.nc">
+            <variables>
+                <variable id="sea_water_velocity">
+                    <defaultColorScaleRange>0.0 3.0</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="IMOS/ACORN/gridded_1h-avg-current-map_non-QC/ROT/????/??/??/*.nc">
+            <variables>
+                <variable id="sea_water_velocity">
+                    <defaultColorScaleRange>0.0 1.8</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="IMOS/ACORN/gridded_1h-avg-current-map_QC/ROT/????/??/??/*.nc">
+            <variables>
+                <variable id="sea_water_velocity">
+                    <defaultColorScaleRange>0.0 1.8</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="IMOS/ACORN/gridded_1h-avg-current-map_non-QC/TURQ/????/??/??/*.nc">
+            <variables>
+                <variable id="sea_water_velocity">
+                    <defaultColorScaleRange>0.0 1.8</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="IMOS/ACORN/gridded_1h-avg-current-map_QC/TURQ/????/??/??/*.nc">
+            <variables>
+                <variable id="sea_water_velocity">
+                    <defaultColorScaleRange>0.0 1.8</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="IMOS/ACORN/gridded_1h-avg-wind-map_QC/???/????/??/??/*.nc">
+            <variables>
+                <variable id="WWDS">
+                    <defaultColorScaleRange>0.0 90.0</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="IMOS/SRS/SST/ghrsst/*/*/*/*.nc">
+            <variables>
+                <variable id="sea_surface_temperature">
+                    <defaultColorScaleRange>268 310</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="IMOS/SRS/SST/ghrsst/L4/??????/????/*.nc">
+            <variables>
+                <variable id="analysed_sst">
+                    <defaultColorScaleRange>268 310</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="IMOS/SRS/OC/gridded/*/*/*/*.nc">
+            <variables>
+                <variable id="chl_oc3">
+                    <logScaling>true</logScaling>
+                    <defaultColorScaleRange>0.05 50</defaultColorScaleRange>
+                </variable>
+
+                <variable id="chl_gsm">
+                    <logScaling>true</logScaling>
+                    <defaultColorScaleRange>0.05 50.0</defaultColorScaleRange>
+                </variable>
+
+                <variable id="chlorophyll">
+                    <logScaling>true</logScaling>
+                    <defaultColorScaleRange>0.05 50.0</defaultColorScaleRange>
+                </variable>
+
+                <variable id="picop_brewin2012in">
+                    <defaultColorScaleRange>4.0 80.0</defaultColorScaleRange>
+                </variable>
+
+                <variable id="npp_vgpm_eppley_oc3">
+                    <defaultColorScaleRange>0.0 1500.0</defaultColorScaleRange>
+                </variable>
+
+                <variable id="npp_vgpm_eppley_gsm">
+                    <defaultColorScaleRange>0.0 1500.0</defaultColorScaleRange>
+                </variable>
+
+                <variable id="nanop_brewin2012in">
+                    <defaultColorScaleRange>0.0 50</defaultColorScaleRange>
+                </variable>
+
+                <variable id="owtd_csiro">
+                    <defaultNumColorBands>8</defaultNumColorBands>
+                    <defaultColorScaleRange>1.0 8</defaultColorScaleRange>
+                </variable>
+
+                <variable id="par">
+                    <defaultColorScaleRange>0.0 50</defaultColorScaleRange>
+                </variable>
+
+                <variable id="ipar">
+                    <defaultColorScaleRange>0.0 0.02</defaultColorScaleRange>
+                </variable>
+
+                <variable id="chl_oci">
+                    <logScaling>true</logScaling>
+                    <defaultColorScaleRange>0.05 50.0</defaultColorScaleRange>
+                </variable>
+
+                <variable id="chl_carder">
+                    <logScaling>true</logScaling>
+                    <defaultColorScaleRange>0.05 50.0</defaultColorScaleRange>
+                </variable>
+
+                <variable id="K_490">
+                    <logScaling>true</logScaling>
+                    <defaultColorScaleRange>0.01 2.0</defaultColorScaleRange>
+                </variable>
+
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="CSIRO/Climatology/Ocean_Acidification/OA_Reconstruction.nc">
+            <variables>
+                <variable id="ALK">
+                    <defaultColorScaleRange>1980 2430</defaultColorScaleRange>
+                </variable>
+                <variable id="OMEGA_A">
+                    <defaultColorScaleRange>1.8 5.0</defaultColorScaleRange>
+                </variable>
+                <variable id="OMEGA_C">
+                    <defaultColorScaleRange>2.9 7.5</defaultColorScaleRange>
+                </variable>
+                <variable id="DIC">
+                    <defaultColorScaleRange>1670.0 2120.0</defaultColorScaleRange>
+                </variable>
+                <variable id="pH_T">
+                    <defaultColorScaleRange>7.90 8.30</defaultColorScaleRange>
+                </variable>
+                <variable id="SST">
+                    <defaultColorScaleRange>7.0 32.0</defaultColorScaleRange>
+                </variable>
+                <variable id="SSS">
+                    <defaultColorScaleRange>29.8 37.2</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+        <datasetPath
+            pathSpec="Deakin_University/bathymetry/PPB_Bathy_50m_Clipped.nc">
+            <variables>
+                <variable id="DEPTH">
+                    <defaultColorScaleRange>-35 5</defaultColorScaleRange>
+                </variable>
+            </variables>
+        </datasetPath>
+
+    </overrides>
+</wmsConfig>

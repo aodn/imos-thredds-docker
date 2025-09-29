@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="THREDDS Server Catalog"
+  xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0 http://www.unidata.ucar.edu/schemas/thredds/InvCatalog.1.0.6.xsd">
+
+  <service name="regGriddedServices" base="" serviceType="compound">
+    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
+    <service name="dap4" serviceType="DAP4" base="/thredds/dap4/" />
+    <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
+    <service name="wcs" serviceType="WCS" base="/thredds/wcs/" />
+    <service name="wms" serviceType="WMS" base="/thredds/wms/" />
+    <service name="ncssGrid" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" />
+    <service name="ncssPoint" serviceType="NetcdfSubset" base="/thredds/ncss/point/" />
+    <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/" />
+    <service name="iso" serviceType="ISO" base="/thredds/iso/" />
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/" />
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
+  </service>
+
+  <datasetScan
+    name="AIMS"
+    ID="AIMS"
+    path="AIMS"
+    location="cdms3:imos-data?AIMS/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Bureau_of_Meteorology"
+    ID="Bureau_of_Meteorology"
+    path="Bureau_of_Meteorology"
+    location="cdms3:imos-data?Bureau_of_Meteorology/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="CSIRO"
+    ID="CSIRO"
+    path="CSIRO"
+    location="cdms3:imos-data?CSIRO/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Defence_Technology_Agency-New_Zealand"
+    ID="Defence_Technology_Agency-New_Zealand"
+    path="Defence_Technology_Agency-New_Zealand"
+    location="cdms3:imos-data?Defence_Technology_Agency-New_Zealand/#delimiter=/">
+    <metadata
+      inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Department_for_Environment_and_Water-South_Australia"
+    ID="Department_for_Environment_and_Water-South_Australia"
+    path="Department_for_Environment_and_Water-South_Australia"
+    location="cdms3:imos-data?Department_for_Environment_and_Water-South_Australia/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Department_of_Environment_and_Science-Queensland"
+    ID="Department_of_Environment_and_Science-Queensland"
+    path="Department_of_Environment_and_Science-Queensland"
+    location="cdms3:imos-data?Department_of_Environment_and_Science-Queensland/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Department_of_Planning_and_Environment-New_South_Wales"
+    ID="Department_of_Planning_and_Environment-New_South_Wales"
+    path="Department_of_Planning_and_Environment-New_South_Wales"
+    location="cdms3:imos-data?Department_of_Planning_and_Environment-New_South_Wales/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Department_of_Transport-Western_Australia"
+    ID="Department_of_Transport-Western_Australia"
+    path="Department_of_Transport-Western_Australia"
+    location="cdms3:imos-data?Department_of_Transport-Western_Australia/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Derwent_Estuary_Program"
+    ID="Derwent_Estuary_Program"
+    path="Derwent_Estuary_Program"
+    location="cdms3:imos-data?Derwent_Estuary_Program/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Flinders_University"
+    ID="Flinders_University"
+    path="Flinders_University"
+    location="cdms3:imos-data?Flinders_University/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Flinders_Ports-South_Australia"
+    ID="Flinders_Ports-South_Australia"
+    path="Flinders_Ports-South_Australia"
+    location="cdms3:imos-data?Flinders_Ports-South_Australia/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Future_Reef_MAP"
+    ID="Future_Reef_MAP"
+    path="Future_Reef_MAP"
+    location="cdms3:imos-data?Future_Reef_MAP/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Gippsland-Ports-Victoria"
+    ID="Gippsland-Ports-Victoria"
+    path="Gippsland-Ports-Victoria"
+    location="cdms3:imos-data?Gippsland-Ports-Victoria/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="IMOS"
+    ID="IMOS"
+    path="IMOS"
+    location="cdms3:imos-data?IMOS/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="Pilbara_Ports_Authority"
+    ID="Pilbara_Ports_Authority"
+    path="Pilbara_Ports_Authority"
+    location="cdms3:imos-data?Pilbara_Ports_Authority/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="UNSW"
+    ID="UNSW"
+    path="UNSW"
+    location="cdms3:imos-data?UNSW/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
+    name="UWA"
+    ID="UWA"
+    path="UWA"
+    location="cdms3:imos-data?UWA/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+
+  <datasetScan
+    name="Deakin_University"
+    ID="Deakin_University"
+    path="Deakin_University"
+    location="cdms3:imos-data?Deakin_University/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+      <exclude wildcard="Victorian-coast_Bathy_10m.nc" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+  <datasetScan
+    name="Department_of_Defence"
+    ID="Department_of_Defence"
+    path="Department_of_Defence"
+    location="cdms3:imos-data?Department_of_Defence/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+      <include wildcard="*.txt" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+  <datasetScan
+    name="NSW-OEH"
+    ID="NSW-OEH"
+    path="NSW-OEH"
+    location="cdms3:imos-data?NSW-OEH/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+      <exclude wildcard="Victorian-coast_Bathy_10m.nc" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+
+  <!-- AGGREGATION EXAMPLE -->
+  <dataset name="WAVE-BUOY Time Aggregation" ID="WAVE-BUOY-agg" urlPath="WAVE-BUOY/aggregation">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+      <aggregation dimName="TIME" type="joinExisting" recheckEvery="15 min">
+        <scan location="cdms3:imos-data?IMOS/OceanCurrent/GSLA/NRT/2025/" suffix=".nc" />
+      </aggregation>
+    </netcdf>
+  </dataset>
+</catalog>
