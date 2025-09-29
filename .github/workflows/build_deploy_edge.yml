@@ -49,7 +49,7 @@ jobs:
     needs: [build_push]
     uses: ./.github/workflows/trigger_deploy.yml
     with:
-      app_name: imos-thredds-docker
+      app_name: threddsv5
       environment: edge
       digest: ${{ needs.build_push.outputs.digest }}
     secrets: inherit
