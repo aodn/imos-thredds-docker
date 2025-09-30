@@ -58,7 +58,7 @@ jobs:
     needs: [build_push]
     uses: ./.github/workflows/trigger_deploy.yml
     with:
-      app_name: threddsv5
+      app_name: imos-thredds-v5
       environment: staging
       digest: ${{ needs.build_push.outputs.digest }}
     secrets: inherit
@@ -66,7 +66,7 @@ jobs:
     needs: [build_push, trigger_staging_deploy]
     uses: ./.github/workflows/trigger_deploy.yml
     with:
-      app_name: threddsv5
+      app_name: imos-thredds-v5
       environment: production
       digest: ${{ needs.build_push.outputs.digest }}
     secrets: inherit
