@@ -19,6 +19,15 @@
     <service name="uddc" serviceType="UDDC" base="/thredds/uddc/" />
   </service>
 
+
+  <datasetScan name="IMOS ausTEMP last 10 days" ID="austemp"
+    path="AusTemp" location="content/austemp">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+  </datasetScan>
+
   <datasetScan
     name="AIMS"
     ID="AIMS"
