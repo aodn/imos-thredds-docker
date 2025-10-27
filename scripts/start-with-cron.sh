@@ -10,7 +10,7 @@ mkdir -p /usr/local/tomcat/content/thredds/public/austemp
 # Adjust the schedule as needed: https://crontab.guru/
 # Set PATH so cron can find aws CLI
 (echo "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"; \
- echo "*/2 * * * * /usr/local/bin/sync-s3.sh >> /var/log/s3-sync.log 2>&1") | crontab -
+ echo "*/30 * * * * /usr/local/bin/sync-s3.sh >> /var/log/s3-sync.log 2>&1") | crontab -
 
 # Start cron daemon in background
 cron
