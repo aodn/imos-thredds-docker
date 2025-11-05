@@ -54,16 +54,8 @@ jobs:
           gh release upload ${{ github.ref_name }} metadata.json
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-  trigger_staging_deploy:
-    needs: [build_push]
-    uses: ./.github/workflows/trigger_deploy.yml
-    with:
-      app_name: imos-thredds-v5
-      environment: staging
-      digest: ${{ needs.build_push.outputs.digest }}
-    secrets: inherit
   trigger_production_deploy:
-    needs: [build_push, trigger_staging_deploy]
+    needs: [build_push]
     uses: ./.github/workflows/trigger_deploy.yml
     with:
       app_name: imos-thredds-v5
