@@ -16,15 +16,6 @@
     <service name="cdmremote" serviceType="CdmRemote" base="/thredds/cdmremote/" />
   </service>
 
-
-  <datasetScan name="IMOS ausTEMP last 10 days" ID="austemp"
-    path="AusTemp" location="content/austemp">
-    <metadata inherited="true">
-      <serviceName>regGriddedServices</serviceName>
-      <dataType>Grid</dataType>
-    </metadata>
-  </datasetScan>
-
   <datasetScan
     name="AIMS"
     ID="AIMS"
@@ -101,6 +92,25 @@
       <lexigraphicByName increasing="true" />
     </sort>
   </datasetScan>
+ <datasetScan
+    name="Deakin_University"
+    ID="Deakin_University"
+    path="Deakin_University"
+    location="cdms3:imos-data?Deakin_University/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+      <exclude wildcard="Victorian-coast_Bathy_10m.nc" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
 
   <datasetScan
     name="Department_for_Environment_and_Water-South_Australia"
@@ -121,6 +131,26 @@
     </sort>
   </datasetScan>
 
+  <datasetScan
+    name="Department_of_Defence"
+    ID="Department_of_Defence"
+    path="Department_of_Defence"
+    location="cdms3:imos-data?Department_of_Defence/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+      <include wildcard="*.txt" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+  
   <datasetScan
     name="Department_of_Environment_and_Science-Queensland"
     ID="Department_of_Environment_and_Science-Queensland"
@@ -198,10 +228,10 @@
   </datasetScan>
 
   <datasetScan
-    name="Flinders_University"
-    ID="Flinders_University"
-    path="Flinders_University"
-    location="cdms3:imos-data?Flinders_University/#delimiter=/">
+    name="Flinders_Ports-South_Australia"
+    ID="Flinders_Ports-South_Australia"
+    path="Flinders_Ports-South_Australia"
+    location="cdms3:imos-data?Flinders_Ports-South_Australia/#delimiter=/">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -217,10 +247,10 @@
   </datasetScan>
 
   <datasetScan
-    name="Flinders_Ports-South_Australia"
-    ID="Flinders_Ports-South_Australia"
-    path="Flinders_Ports-South_Australia"
-    location="cdms3:imos-data?Flinders_Ports-South_Australia/#delimiter=/">
+    name="Flinders_University"
+    ID="Flinders_University"
+    path="Flinders_University"
+    location="cdms3:imos-data?Flinders_University/#delimiter=/">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -293,6 +323,26 @@
   </datasetScan>
 
   <datasetScan
+    name="NSW-OEH"
+    ID="NSW-OEH"
+    path="NSW-OEH"
+    location="cdms3:imos-data?NSW-OEH/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+      <exclude wildcard="Victorian-coast_Bathy_10m.nc" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
     name="Pilbara_Ports_Authority"
     ID="Pilbara_Ports_Authority"
     path="Pilbara_Ports_Authority"
@@ -348,97 +398,4 @@
       <lexigraphicByName increasing="true" />
     </sort>
   </datasetScan>
-
-
-  <datasetScan
-    name="Deakin_University"
-    ID="Deakin_University"
-    path="Deakin_University"
-    location="cdms3:imos-data?Deakin_University/#delimiter=/">
-    <metadata inherited="true">
-      <serviceName>regGriddedServices</serviceName>
-      <dataType>Grid</dataType>
-    </metadata>
-    <filter>
-      <include wildcard="*.nc" />
-      <include wildcard="*.nc.gz" />
-      <include wildcard="*.ncml" />
-      <exclude wildcard="Victorian-coast_Bathy_10m.nc" />
-    </filter>
-    <sort>
-      <lexigraphicByName increasing="true" />
-    </sort>
-  </datasetScan>
-  <datasetScan
-    name="Department_of_Defence"
-    ID="Department_of_Defence"
-    path="Department_of_Defence"
-    location="cdms3:imos-data?Department_of_Defence/#delimiter=/">
-    <metadata inherited="true">
-      <serviceName>regGriddedServices</serviceName>
-      <dataType>Grid</dataType>
-    </metadata>
-    <filter>
-      <include wildcard="*.nc" />
-      <include wildcard="*.nc.gz" />
-      <include wildcard="*.ncml" />
-      <include wildcard="*.txt" />
-    </filter>
-    <sort>
-      <lexigraphicByName increasing="true" />
-    </sort>
-  </datasetScan>
-  <datasetScan
-    name="NSW-OEH"
-    ID="NSW-OEH"
-    path="NSW-OEH"
-    location="cdms3:imos-data?NSW-OEH/#delimiter=/">
-    <metadata inherited="true">
-      <serviceName>regGriddedServices</serviceName>
-      <dataType>Grid</dataType>
-    </metadata>
-    <filter>
-      <include wildcard="*.nc" />
-      <include wildcard="*.nc.gz" />
-      <include wildcard="*.ncml" />
-      <exclude wildcard="Victorian-coast_Bathy_10m.nc" />
-    </filter>
-    <sort>
-      <lexigraphicByName increasing="true" />
-    </sort>
-  </datasetScan>
-
-
-  <!-- Marine-Heatwave pixel drill: joins daily files along time for NCSS point queries.
-       New daily files are picked up automatically via recheckEvery.
-       Add a new year <scan> entry when extending the range across a year boundary. -->
-  <!-- NCSS endpoint: /thredds/ncss/grid/AusTemp/marine-heatwave-agg?var=sst&latitude=LAT&longitude=LON&time_start=START&time_end=END&accept=csv -->
-  <dataset name="AusTemp Marine-Heatwave Aggregation" ID="austemp-mhw-agg" urlPath="AusTemp/marine-heatwave-agg">
-    <metadata inherited="true">
-      <serviceName>regGriddedServices</serviceName>
-      <dataType>Grid</dataType>
-    </metadata>
-    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-      <aggregation dimName="time" type="joinExisting" recheckEvery="1 hour">
-        <scan location="cdms3:imos-data?IMOS/SRS/AusTemp/Marine-Heatwave/2026/" suffix=".nc" />
-      </aggregation>
-    </netcdf>
-  </dataset>
-
-  <!-- SSTA pixel drill: joins daily files along time for NCSS point queries.
-       New daily files are picked up automatically via recheckEvery.
-       Add a new year <scan> entry when extending the range across a year boundary. -->
-  <!-- NCSS endpoint: /thredds/ncss/grid/AusTemp/ssta-agg?var=sst_anomaly&latitude=LAT&longitude=LON&time_start=START&time_end=END&accept=csv -->
-  <dataset name="AusTemp SSTA Aggregation" ID="austemp-ssta-agg" urlPath="AusTemp/ssta-agg">
-    <metadata inherited="true">
-      <serviceName>regGriddedServices</serviceName>
-      <dataType>Grid</dataType>
-    </metadata>
-    <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
-      <aggregation dimName="time" type="joinExisting" recheckEvery="1 hour">
-        <scan location="cdms3:imos-data?IMOS/SRS/AusTemp/ssta/2026/" suffix=".nc" />
-      </aggregation>
-    </netcdf>
-  </dataset>
-
 </catalog>
