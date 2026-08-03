@@ -362,6 +362,25 @@
   </datasetScan>
 
   <datasetScan
+    name="SARDI"
+    ID="SARDI"
+    path="SARDI"
+    location="cdms3:imos-data?SARDI/#delimiter=/">
+    <metadata inherited="true">
+      <serviceName>regGriddedServices</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <filter>
+      <include wildcard="*.nc" />
+      <include wildcard="*.nc.gz" />
+      <include wildcard="*.ncml" />
+    </filter>
+    <sort>
+      <lexigraphicByName increasing="true" />
+    </sort>
+  </datasetScan>
+
+  <datasetScan
     name="UNSW"
     ID="UNSW"
     path="UNSW"
