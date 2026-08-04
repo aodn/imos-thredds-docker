@@ -19,12 +19,12 @@
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
  -->
-<Server port="8005" shutdown="SHUTDOWN">
+<Server port="-1" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
   -->
-  <!--APR library loader. Documentation at /docs/apr.html -->
+  <!-- APR library loader. Documentation at /docs/apr.html -->
   <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
   <!-- Prevent memory leaks due to use of particular java/javax APIs-->
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
@@ -38,7 +38,7 @@
     <!-- Editable user database that can also be used by
          UserDatabaseRealm to authenticate users
     -->
-    <Resource name="UserDatabase" auth="Container"
+    <Resource digest="SHA" name="UserDatabase" auth="Container"
               type="org.apache.catalina.UserDatabase"
               description="User database that can be updated and saved"
               factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
@@ -70,32 +70,37 @@
                connectionTimeout="20000"
                redirectPort="8443"
                relaxedPathChars='[]|'
-               relaxedQueryChars='[]:|{}^&#x5c;&#x60;&quot;&lt;&gt;' />
+               relaxedQueryChars='[]:|{}^&#x5c;&#x60;&quot;&lt;&gt;'
+               maxParameterCount="1000"
+               />
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector server="Apache" secure="true" executor="tomcatThreadPool"
                port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
-               redirectPort="8443" />
+               redirectPort="8443"
+               maxParameterCount="1000"
+               />
     -->
-    <!-- Define a SSL/TLS HTTP/1.1 Connector on port 8443
+    <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443
          This connector uses the NIO implementation. The default
          SSLImplementation will depend on the presence of the APR/native
-         library and the useOpenSSL attribute of the
-         AprLifecycleListener.
+         library and the useOpenSSL attribute of the AprLifecycleListener.
          Either JSSE or OpenSSL style configuration may be used regardless of
          the SSLImplementation selected. JSSE style configuration is used below.
     -->
     <!--
     <Connector server="Apache" secure="true" port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
-               maxThreads="150" SSLEnabled="true">
+               maxThreads="150" SSLEnabled="true"
+               maxParameterCount="1000"
+               >
         <SSLHostConfig>
             <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
                          type="RSA" />
         </SSLHostConfig>
     </Connector>
     -->
-    <!-- Define a SSL/TLS HTTP/1.1 Connector on port 8443 with HTTP/2
+    <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443 with HTTP/2
          This connector uses the APR/native implementation which always uses
          OpenSSL for TLS.
          Either JSSE or OpenSSL style configuration may be used. OpenSSL style
@@ -115,8 +120,14 @@
     -->
 
     <!-- Define an AJP 1.3 Connector on port 8009 -->
-    <Connector server="Apache" secure="true" port="8009" protocol="AJP/1.3" redirectPort="8443" />
-
+    <!--
+    <Connector server="Apache" secure="true" protocol="AJP/1.3"
+               address="::1"
+               port="8009"
+               redirectPort="8443"
+               maxParameterCount="1000"
+               />
+    -->
 
     <!-- An Engine represents the entry point (within Catalina) that processes
          every request.  The Engine implementation for Tomcat stand alone
@@ -128,19 +139,8 @@
     <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
     -->
     <Engine name="Catalina" defaultHost="localhost">
-        <!--
-             Handle X-Forwarded-Proto and X-Forwarded-For http header when
-             behind a well configured proxy.
-
-             * X-Forwarded-Proto is to preserve the original proto (httpS)
-               from the client connecting URL.
-
-             * X-Forwarded-For (set by default by the Valve) is to preserve the
-               original client IP in the logs.  Otherwise the nearest proxy IP
-               will be logged, much less useful for auditing.
-        -->
-        <Valve className="org.apache.catalina.valves.RemoteIpValve"
-            protocolHeader="X-Forwarded-Proto" />
+      <Valve className="org.apache.catalina.valves.RemoteIpValve"
+             protocolHeader="X-Forwarded-Proto" />
 
       <!--For clustering, please take a look at documentation at:
           /docs/cluster-howto.html  (simple how to)
@@ -157,7 +157,9 @@
              that are performed against this UserDatabase are immediately
              available for use by the Realm.  -->
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
-               resourceName="UserDatabase"><CredentialHandler className="org.apache.catalina.realm.MessageDigestCredentialHandler" algorithm="SHA" /></Realm>
+                resourceName="UserDatabase">
+                        <CredentialHandler className="org.apache.catalina.realm.MessageDigestCredentialHandler" algorithm="sha-512" />
+        </Realm>
       </Realm>
 
       <Host name="localhost"  appBase="webapps"
@@ -175,7 +177,6 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                prefix="localhost_access_log" suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
-
       </Host>
     </Engine>
   </Service>
