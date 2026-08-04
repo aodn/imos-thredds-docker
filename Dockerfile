@@ -8,6 +8,6 @@ ENV CATALINA_HOME=/usr/local/tomcat
 COPY config/threddsConfig.xml ${CATALINA_HOME}/content/thredds/threddsConfig.xml
 COPY config/catalog.xml ${CATALINA_HOME}/content/thredds/catalog.xml
 COPY config/wmsConfig.xml ${CATALINA_HOME}/content/thredds/wmsConfig.xml
-COPY config/server.xmk ${CATALINA_HOME}/conf/server.xml
+COPY config/server.xml ${CATALINA_HOME}/conf/server.xml
 
 CMD ["catalina.sh", "run"]
