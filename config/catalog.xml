@@ -39,7 +39,8 @@
     name="Bureau_of_Meteorology"
     ID="Bureau_of_Meteorology"
     path="Bureau_of_Meteorology"
-    location="cdms3:imos-data?Bureau_of_Meteorology/#delimiter=/">
+    location="cdms3:imos-data?Bureau_of_Meteorology/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -58,7 +59,8 @@
     name="CSIRO"
     ID="CSIRO"
     path="CSIRO"
-    location="cdms3:imos-data?CSIRO/#delimiter=/">
+    location="cdms3:imos-data?CSIRO/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -77,7 +79,8 @@
     name="Defence_Technology_Agency-New_Zealand"
     ID="Defence_Technology_Agency-New_Zealand"
     path="Defence_Technology_Agency-New_Zealand"
-    location="cdms3:imos-data?Defence_Technology_Agency-New_Zealand/#delimiter=/">
+    location="cdms3:imos-data?Defence_Technology_Agency-New_Zealand/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata
       inherited="true">
       <serviceName>regGriddedServices</serviceName>
@@ -96,7 +99,8 @@
     name="Deakin_University"
     ID="Deakin_University"
     path="Deakin_University"
-    location="cdms3:imos-data?Deakin_University/#delimiter=/">
+    location="cdms3:imos-data?Deakin_University/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -116,7 +120,8 @@
     name="Department_for_Environment_and_Water-South_Australia"
     ID="Department_for_Environment_and_Water-South_Australia"
     path="Department_for_Environment_and_Water-South_Australia"
-    location="cdms3:imos-data?Department_for_Environment_and_Water-South_Australia/#delimiter=/">
+    location="cdms3:imos-data?Department_for_Environment_and_Water-South_Australia/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -135,7 +140,8 @@
     name="Department_of_Defence"
     ID="Department_of_Defence"
     path="Department_of_Defence"
-    location="cdms3:imos-data?Department_of_Defence/#delimiter=/">
+    location="cdms3:imos-data?Department_of_Defence/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -155,7 +161,8 @@
     name="Department_of_Environment_and_Science-Queensland"
     ID="Department_of_Environment_and_Science-Queensland"
     path="Department_of_Environment_and_Science-Queensland"
-    location="cdms3:imos-data?Department_of_Environment_and_Science-Queensland/#delimiter=/">
+    location="cdms3:imos-data?Department_of_Environment_and_Science-Queensland/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -174,7 +181,8 @@
     name="Department_of_Planning_and_Environment-New_South_Wales"
     ID="Department_of_Planning_and_Environment-New_South_Wales"
     path="Department_of_Planning_and_Environment-New_South_Wales"
-    location="cdms3:imos-data?Department_of_Planning_and_Environment-New_South_Wales/#delimiter=/">
+    location="cdms3:imos-data?Department_of_Planning_and_Environment-New_South_Wales/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -193,7 +201,8 @@
     name="Department_of_Transport-Western_Australia"
     ID="Department_of_Transport-Western_Australia"
     path="Department_of_Transport-Western_Australia"
-    location="cdms3:imos-data?Department_of_Transport-Western_Australia/#delimiter=/">
+    location="cdms3:imos-data?Department_of_Transport-Western_Australia/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -212,7 +221,8 @@
     name="Derwent_Estuary_Program"
     ID="Derwent_Estuary_Program"
     path="Derwent_Estuary_Program"
-    location="cdms3:imos-data?Derwent_Estuary_Program/#delimiter=/">
+    location="cdms3:imos-data?Derwent_Estuary_Program/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -231,7 +241,8 @@
     name="Flinders_Ports-South_Australia"
     ID="Flinders_Ports-South_Australia"
     path="Flinders_Ports-South_Australia"
-    location="cdms3:imos-data?Flinders_Ports-South_Australia/#delimiter=/">
+    location="cdms3:imos-data?Flinders_Ports-South_Australia/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -250,7 +261,8 @@
     name="Flinders_University"
     ID="Flinders_University"
     path="Flinders_University"
-    location="cdms3:imos-data?Flinders_University/#delimiter=/">
+    location="cdms3:imos-data?Flinders_University/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -269,7 +281,8 @@
     name="Future_Reef_MAP"
     ID="Future_Reef_MAP"
     path="Future_Reef_MAP"
-    location="cdms3:imos-data?Future_Reef_MAP/#delimiter=/">
+    location="cdms3:imos-data?Future_Reef_MAP/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -288,7 +301,8 @@
     name="Gippsland-Ports-Victoria"
     ID="Gippsland-Ports-Victoria"
     path="Gippsland-Ports-Victoria"
-    location="cdms3:imos-data?Gippsland-Ports-Victoria/#delimiter=/">
+    location="cdms3:imos-data?Gippsland-Ports-Victoria/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -307,7 +321,8 @@
     name="IMOS"
     ID="IMOS"
     path="IMOS"
-    location="cdms3:imos-data?IMOS/#delimiter=/">
+    location="cdms3:imos-data?IMOS/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -326,7 +341,8 @@
     name="NSW-OEH"
     ID="NSW-OEH"
     path="NSW-OEH"
-    location="cdms3:imos-data?NSW-OEH/#delimiter=/">
+    location="cdms3:imos-data?NSW-OEH/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -346,7 +362,8 @@
     name="Pilbara_Ports_Authority"
     ID="Pilbara_Ports_Authority"
     path="Pilbara_Ports_Authority"
-    location="cdms3:imos-data?Pilbara_Ports_Authority/#delimiter=/">
+    location="cdms3:imos-data?Pilbara_Ports_Authority/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -365,7 +382,8 @@
     name="SARDI"
     ID="SARDI"
     path="SARDI"
-    location="cdms3:imos-data?SARDI/#delimiter=/">
+    location="cdms3:imos-data?SARDI/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -384,7 +402,8 @@
     name="UNSW"
     ID="UNSW"
     path="UNSW"
-    location="cdms3:imos-data?UNSW/#delimiter=/">
+    location="cdms3:imos-data?UNSW/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
@@ -403,7 +422,8 @@
     name="UWA"
     ID="UWA"
     path="UWA"
-    location="cdms3:imos-data?UWA/#delimiter=/">
+    location="cdms3:imos-data?UWA/#delimiter=/"
+    excludeEmptyDirs="true">
     <metadata inherited="true">
       <serviceName>regGriddedServices</serviceName>
       <dataType>Grid</dataType>
