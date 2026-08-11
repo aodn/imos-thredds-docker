@@ -1,5 +1,5 @@
 # Use the official Unidata THREDDS base image
-FROM unidata/thredds-docker:5.8
+FROM unidata/thredds-docker:5.9
 
 # Set build-time environment variable for convenience (already defined in base image, but safe to reference)
 ENV CATALINA_HOME=/usr/local/tomcat
