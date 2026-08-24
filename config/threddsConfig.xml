@@ -80,20 +80,20 @@
   -->
 
   <NetcdfFileCache>
-    <minFiles>200</minFiles>
-    <maxFiles>400</maxFiles>
+    <minFiles>20</minFiles>
+    <maxFiles>50</maxFiles>
     <scour>10 min</scour>
   </NetcdfFileCache>
 
   <!--
   The <HTTPFileCache> element:
-  allow 10 - 20 open datasets, cleanup every 17 minutes
+  allow 5 - 10 open datasets, cleanup every 5 minutes
   used by HTTP Range requests.
   -->
   <HTTPFileCache>
-    <minFiles>20</minFiles>
-    <maxFiles>40</maxFiles>
-    <scour>10 min</scour>
+    <minFiles>5</minFiles>
+    <maxFiles>10</maxFiles>
+    <scour>5 min</scour>
   </HTTPFileCache>
 
 
