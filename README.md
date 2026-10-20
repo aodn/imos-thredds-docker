@@ -16,7 +16,7 @@ THREDDS (Thematic Real-time Environmental Distributed Data Services) is a web se
 
 ```
 ┌─────────────────────────────────────────────────┐
-│  Docker Container (unidata/thredds-docker:5.8)  │
+│  Docker Container (unidata/thredds-docker)  │
 ├─────────────────────────────────────────────────┤
 │  • THREDDS Server (Tomcat + Java)               │
 │  • Custom configuration files                   │
